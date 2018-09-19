@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #4E5964;
+}
+
+.grid{
+	height: 100vh;
+	max-width: 800px;
+	margin: 0 auto;
+	display:grid;
+	grid-template-rows: 35px 1fr 15px 1fr;
+	grid-template-columns: 15px 1fr 30px 1fr 15px;
+}
+
+.block{
+	text-align: center;
+	padding: 15px;
+	grid-row-start: 2;
+	grid-column-start: 1;
+	grid-column-end: 6;
+	background-color: SlateGrey;
+	min-height: 500px;
+	height: 100%;
+}
+
+.col1{
+	opacity: 0.2;
+	box-sizing: content-box;
+	margin: 15px 0 15px 0;
+	grid-row-start: 2;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	background-color: DeepPink;
+}
+
+.col2{
+	opacity: 0.2;
+	box-sizing: content-box;
+	margin: 15px 0 15px 0;
+	grid-row-start: 2;
+	grid-column-start: 4;
+	grid-column-end: 5;
+	background-color: DeepPink;
+}
+
+.main-header{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 60px;
+	color: GhostWhite;
+}
+
+.text{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 20px;
+	color: #c8c8ce;
+}
+
+span{
+	color: GhostWhite;
+}
