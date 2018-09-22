@@ -16,7 +16,7 @@ body{
 	max-width: 90vw;
 	margin: 0 auto;
 	display:grid;
-	grid-template-rows: 35px 1fr 15px 1fr;
+	grid-template-rows: 15px 1fr 15px;
 	grid-template-columns: 15px 1fr 30px 1fr 15px;
 }
 
@@ -24,7 +24,7 @@ body{
 	text-align: center;
 	padding: 15px;
 	grid-row-start: 1;
-	grid-column-start: 1;
+	grid-column-start: 1; //==grid-column: 1 / 12;
 	grid-column-end: 12;
 	background-color: #26292b;
 	min-height: 100vh;
@@ -65,7 +65,7 @@ body{
 	opacity: 0.2;
 	box-sizing: content-box;
 	margin: 15px 0 15px 0;
-	grid-row-start: 2;
+	grid-row-start: 1;
 	grid-column-start: 2;
 	grid-column-end: 3;
 	background-color: DeepPink;
