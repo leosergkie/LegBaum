@@ -1,0 +1,78 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns:15px 45px 60px 25px 15px 15px 50px 15px 20px 45px 15px;
+	grid-template-rows:15px 35px 60px 50px 125px 75px 50px 160px;
+}
+
+.menu-icon {
+	font-size: 30px;
+	margin-top: 15px;
+	margin-left: 25px;
+	color: #cb4743;
+	position: absolute;
+	text-shadow: 0 2px 10px black;
+}
+
+.menu-hidden{
+	grid-column-start: 1;
+	grid-column-end: 9;
+	grid-row-start: 1;
+	grid-row-end: 8;
+	display: none;
+	font-size: 20px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 240px;
+	grid-template-rows: 195px  50px 5px 50px 5px 50px 5px 50px 160px;
+}
+
+.grid div.menu-hidden div.logo{
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+	min-height: 200px;
+	min-width: 200px;
+}
+
+.grid div.menu-hidden div.nav-itm1{
+	grid-column: 1 / 2;
+	grid-row:  2 / 3;
+}
+
+.grid div.menu-hidden div.nav-itm2{
+    grid-column: 1 / 2;
+	grid-row: 4 / 5;
+}
+
+.grid div.menu-hidden div.nav-itm3{
+    grid-column: 1 / 2;
+	grid-row: 6 / 7;
+}
+.grid div.menu-hidden div.nav-itm4{
+    grid-column: 1 / 2;
+	grid-row: 8 / 9;
+}
+
+.menu-hidden .nav a{
+	background-color: #e5a19f;
+	border-top-color: #9a7271; 
+    border-top-style: solid;
+    border-top-width: 2px;
+	line-height: 45px;
+}
+
+.menu-hidden .nav a:hover{
+    border-top-color: black;
+	background-color: #cb4440;
+}
+
+.menu-hidden a {
+	color: white;
+	display: block;
+	text-decoration: none;
+	min-height: 50px;
+}
