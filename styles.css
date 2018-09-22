@@ -8,12 +8,12 @@
 }
 
 body{
-	background-color: #4E5964;
+	background-color: #16191c;
 }
 
 .grid{
 	height: 100vh;
-	max-width: 800px;
+	max-width: 90vw;
 	margin: 0 auto;
 	display:grid;
 	grid-template-rows: 35px 1fr 15px 1fr;
@@ -23,13 +23,43 @@ body{
 .block{
 	text-align: center;
 	padding: 15px;
-	grid-row-start: 2;
+	grid-row-start: 1;
 	grid-column-start: 1;
-	grid-column-end: 6;
-	background-color: SlateGrey;
-	min-height: 500px;
+	grid-column-end: 12;
+	background-color: #26292b;
+	min-height: 100vh;
 	height: 100%;
 }
+
+.block2 {
+	width: 80vw;
+	height: 43vh;
+	background-color: #3b3e40;
+	margin-bottom: 15px;
+	padding: 15px;
+	text-align: left;
+	color: #FFFFFF;
+	font-size: 24px;
+}
+
+.inf_block {
+	width: 25vw;
+	height: 100px;
+	float: right;
+	background-color: #26292b;
+	font-size: 16px;
+	padding: 15px;
+}
+
+.d1 {
+	display: inline-block;
+	width: 60px; height: 60px;
+	background: #83A7C9;
+	border-radius: 50%;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
 
 .col1{
 	opacity: 0.2;
