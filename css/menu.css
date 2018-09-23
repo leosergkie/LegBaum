@@ -89,27 +89,20 @@ body {
 }
 
 .menu-close{
-	//position: absolute;
-	grid-column: 10 / 11;
-	grid-row: 6 / 7;
+	grid-column: 9 / 12;
+	grid-row: 1 / 9;
 	text-align: center;
-	
+	display: none;
+	display:grid;
+	grid-template-rows: 9fr 1fr 9fr;
+	grid-template-columns: 1fr 2fr 1fr;
 }
-/*
-	position: absolute;
-    left: -100%;
-	height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-	font-family: "Neucha";
-	grid-column: 1 / 9;
-	grid-row: 1 / 8;
-	font-size: 20px;
-	text-align: center;
-	
-	display: grid;
-	grid-template-columns: 240px;
-	grid-template-rows: 203px  48px 5px 48px 5px 48px 5px 48px 160px;
-*/
-.menu-close:hover{
+.menu-close img {
+	grid-row: 2 / 3;
+	grid-column: 2 / 3;
+	display: none;
+}
+.menu-close img:hover{
+	vertical-align: middle;
 	cursor: pointer;
 }
