@@ -56,6 +56,41 @@ header {
 	text-align: center;
 }
 
+
+.menu-hidden{
+	position: fixed;
+    left: -120%;
+	height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+	font-family: "Neucha";
+	font-size: 20px;
+	width: 350px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 203px repeat(5,1fr);
+}
+
+.nav a {
+	text-decoration: none;
+	color: white;
+}
+
+.logo {
+	margin-top: 50px;
+}
+
+.menu-close {
+	display: none;
+	position: absolute;
+	bottom: 50%;
+	right: 70%;
+	color: #5f6264;
+	cursor: pointer;
+}
+
+
+
 .block{
 	text-align: center;
 	grid-row-start: 2;
