@@ -11,3 +11,16 @@ $('.menu-bg, .nav, .menu-close').click(function(){
 	$(".menu-icon").fadeIn(400);
 	$(".menu-bg").fadeOut(400);
 });
+
+$(function() {
+  $(".menu-bg, .nav, .menu-close").swipe( {
+    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+          if(direction == 'left') {
+      	      $(".menu-hidden").animate({left: '-320px'},400);
+	          $(".menu-close").fadeOut(400);
+	          $(".menu-icon").fadeIn(400);
+	          $(".menu-bg").fadeOut(400);
+          }   
+    }
+  });
+});
