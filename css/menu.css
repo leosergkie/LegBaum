@@ -1,7 +1,9 @@
 body {
 	margin:0;
 	padding:0;
-	background-image: url(../img/BG.png);
+	//background: url(../img/BG_mobile.png) no-repeat;
+	background: url(../img/BG_small.jpg) no-repeat;
+    background-size: 100%; /* Современные браузеры */
 }
 
 .grid {
@@ -103,4 +105,13 @@ body {
 
 .menu-close img:hover{
 	cursor: pointer;
+}
+
+
+
+@media(min-width: 320){
+	
+	body {
+	    background-image: url(../img/BG_small.jpg);
+	}
 }
