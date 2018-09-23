@@ -64,16 +64,26 @@ header {
     background-color: rgba(0, 0, 0, 0.8);
 	font-family: "Neucha";
 	font-size: 20px;
-	width: 350px;
+	width: 380px;
 	text-align: center;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 203px repeat(5,1fr);
+	grid-template-rows: 1fr repeat(5,1fr);
 }
 
+.nav:hover {
+	background-color: #5f6264; 
+	cursor: pointer;
+}
 .nav a {
 	text-decoration: none;
 	color: white;
+}
+
+.nav {
+	display: grid;
+	align-items: center;
+	height: 100%;
 }
 
 .logo {
@@ -89,8 +99,6 @@ header {
 	cursor: pointer;
 }
 
-
-
 .block{
 	text-align: center;
 	grid-row-start: 2;
@@ -99,6 +107,7 @@ header {
 	background-color: #3b3e40;
 	min-height: 600px;
 	height: 100%;
+	box-shadow: 0px 1px 40px 1px rgba(0,0,0,0.5);
 }
 
 footer {
