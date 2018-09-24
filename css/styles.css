@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	font-family: 'Neucha', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: black;
+}
+
+.background{
+	position: fixed;
+	opacity: 0.75;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-image: url(../img/bg.jpg);
+}
+
+.main{
+	position: relative;
+	z-index: 2;
+}
+
+.header{
+	position: fixed;
+	height: 50px;
+	width: 100vw;
+	z-index: 4;
+	background-color: rgba(255,255,255, 0.7);
+	box-shadow: 0 0 20px rgba(0,0,0,0.75);
+}
+
+.header-grid{
+	height: 50px;
+	max-width: 800px;
+	margin: 0 auto;
+	display:grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 15px 50px 1fr 50px 15px;
+	text-align: center;
+}
+
+.header-grid>p{
+	margin-top: 7px;
+	font-size: 24px;
+	grid-column: 3 / 4;
+	color: #ec7370;
+}
+
+.log-out{
+	margin-top: 10px;
+	grid-column-start: 4;
+}
+
+.log-out>img:hover{
+	cursor: pointer;
+}
+
+.log-out > img{
+	justify-self: end;
+}
+
+.grid{
+	height: 100vh;
+	max-width: 800px;
+	margin: 0 auto;
+	display:grid;
+	grid-template-rows: 65px 1fr 15px 1fr 40px;
+	grid-template-columns: 15px 1fr 30px 1fr 15px;
+}
+
+.block{
+	position: relative;
+	text-align: center;
+	padding: 15px;
+	grid-row-start: 2;
+	grid-column-start: 1;
+	grid-column-end: 6;
+	background-color: rgba(255,255,255, 0.7);
+	min-height: 500px;
+	height: 100%;
+	box-shadow: 0 0 20px rgba(0,0,0,0.75);
+	margin-bottom: -40px;
+}
+
+.col1{
+	opacity: 0.2;
+	box-sizing: content-box;
+	margin: 15px 0 15px 0;
+	grid-row-start: 2;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	background-color: DeepPink;
+}
+
+.col2{
+	opacity: 0.2;
+	box-sizing: content-box;
+	margin: 15px 0 15px 0;
+	grid-row-start: 2;
+	grid-column-start: 4;
+	grid-column-end: 5;
+	background-color: DeepPink;
+}
+
+.main-header{
+	font-family: 'Neucha', sans-serif;
+	font-size: 60px;
+	color: #ec7370;
+}
+
+.text{
+	font-family: 'Neucha', sans-serif;
+	font-size: 20px;
+	color: #441920;
+}
+
+span{
+	color: #ec7370;
+}
+
+.footer{
+	position: absolute;
+	
+	bottom: -40px;
+	color: white;
+	text-align: center;
+	font-size: 18;
+	left: 0; 
+	right: 0; 
+	margin: 0 auto;
+	width: 300px;
+}
+
+.footer > p{
+	text-shadow: 1px 1px 2px black;
+}
+
+.footer > p > a{
+	text-decoration-style: none;
+	text-shadow: 1px 1px 2px black;
+	color: #ec7370;
+}

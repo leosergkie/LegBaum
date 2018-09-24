@@ -3,7 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Legends</title>
+	<link rel = "stylesheet" href="css/login.css">
 	<link rel = "stylesheet" href="css/menu.css">
+	<link rel = "stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width">
     <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
@@ -11,17 +13,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-	<div class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
-    	<div class="menu-hidden">
-	    	<li class="logo"><img src="img/Logo.png"></li>
-			<li class="nav nav-itm1"><a href="#">Задание</a></li>
-			<li class="nav nav-itm2"><a href="#">Страница команды</a></li>
-			<li class="nav nav-itm3"><a href="#">Правила</a></li>
-			<li class="nav nav-itm4"><a href="#">Методичка</a></li>
+	<div class="header" style="background: none; box-shadow: none;">
+		<div class="header-grid">
+			<div class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
+		</div>
 		
 	</div>
-    <div class="menu-bg"></div>
-    <div class="grid">
+
+	<div class="menu-grid">
+        <div class="menu-bg"></div>
+	    <div class="menu-hidden">
+	        <div class="logo"><img src="img/Logo.png"></div>
+		    <div class="nav nav-itm1"><a href="#">Задание</a></div>
+		    <div class="nav nav-itm2"><a href="#">Страница команды</a></div>
+		    <div class="nav nav-itm3"><a href="#">Правила</a></div>
+		    <div class="nav nav-itm4"><a href="#">Методичка</a></div>
+	    </div>
+	    <div class="menu-close"><img src="img/close.png"></div>
+    </div>
+
+    <div class="login-grid">
 		<div class="login_back"></div>
     	<div class="login">
     		<div id="Enter">ВХОД</div>
@@ -34,6 +45,7 @@
     	<div class="login_ornament"><img src="img/ornament.png"></div>
     </div>
 
+    <!--div class="title-text"><img src="img/BG-text.png"></div-->
 	<script src="js/menu.js"></script>
 	<script src="js/jquery.touchSwipe.min.js"></script>
 </body>

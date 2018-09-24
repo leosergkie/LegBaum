@@ -1,0 +1,97 @@
+body {
+	margin:0;
+	padding:0;
+	
+	background: url(../img/BG-notext.jpg) no-repeat;
+    background-position: center 40%; 
+  //  position: absolute;
+  background-size: cover;
+}
+
+.login-grid {
+	position: relative;
+	z-index: 3;
+	display: grid;
+	grid-template-columns:1fr 95px 95px 1fr;
+	grid-template-rows:1fr 54px 250px 1.5fr;
+	height:100vh;
+}
+
+.login_ornament{
+    grid-row: 2 / 3;
+    grid-column: 1 / 10;
+  	text-align: center;
+ 	z-index: 10;
+}
+
+.login{
+	grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  	font-family: "Neucha";
+   	z-index: 2;
+  	text-align: center;
+    display: grid;
+    grid-template-columns: 190px;
+	grid-template-rows: 80px 30px 25px 30px 25px 60px ; /*250*/
+}
+
+.login_back{
+	background-color: rgba(255, 255, 255, 0.7);
+  	box-shadow: 0 0 30px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1);
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+    z-index: 1;
+}
+.login >div{
+	color: #441920;
+	font-size: 18px;
+	margin: auto 0;
+}
+.login >input{
+	border-radius:20px 20px 20px 20px;
+	border: 0px solid white;
+	outline: none;
+	width: 150px;
+	height: 25px;
+	margin-left: 20px;
+	box-shadow: 0 1px 20px black;
+	text-align: center;
+}
+#Sign_in{
+	font-size: 20px;
+	color: #ec7370;
+	width: 100px;
+	border-radius: 3px 3px 3px 3px;
+	background-color: white;
+	font-family: "Neucha";
+	margin:auto 45px;
+}
+
+#Sign_in:hover{
+	background-color: MistyRose;
+	//box-shadow: 0 1px 25px black;//, inset 0 0 10px black;
+}
+
+#Sign_in:active{
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#Enter{
+	color: #ec7370;
+	font-size: 45px;
+	margin-top: 30px;
+	//text-shadow: 0 3px 10px black;
+}
+
+.title-text{
+	position: absolute;
+	width: 100vw;
+	bottom: 0;
+	text-align: center;
+}
+
+.title-text>img{
+	display: inline-block;
+	width: 80vw;
+	max-width: 800px;
+}
