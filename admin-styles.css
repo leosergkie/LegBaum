@@ -272,9 +272,17 @@ label[for="teamleadFirstName"] {
 
 .add-member {
 	grid-column: 2 / 6;
-	//grid-row: 3 / 4;
 	margin: 0 50px;
+	background-color: #9fa4a6;
+	color: white;
+	padding-top: 5px;
+	font-size: 18px;
 }
+.add-member:hover {
+	background-color: #424040;
+	cursor: pointer;
+}
+
 
 label[for="memberSecondName"] {
 	grid-column: 2 / 4;
@@ -302,6 +310,18 @@ label[for="memberFirstName"] {
 	grid-column: 5 / 9;
     grid-row: 6 / 7;
     margin: 0 50px;
+	background-color:#808080;
+	border:0px solid #ffffff;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+}
+.signup-form-submit:hover {
+	background-color: #333;
+	cursor: pointer;
+
 }
 
 
