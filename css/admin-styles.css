@@ -181,6 +181,7 @@ footer {
 }
 .search_team>input{
 	width: 100px;
+	height: 25px;
 }
 #show:hover{
 	background-color:#4682B4;
@@ -191,6 +192,7 @@ footer {
 	color: white;
 	border: none;
 	padding: 4px 8px 4px 8px ;
+	height: 29px;
 }
 .search_key{
 	grid-row: 5 / 6;
