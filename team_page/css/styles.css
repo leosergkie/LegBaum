@@ -173,12 +173,24 @@ span{
 
 .participants {
 	margin-bottom: 20px;
+	width: 30vw;
+	margin-left: auto;
+	margin-right: auto;
+	//border: 1px solid red;
 }
 
 /*.team_inf {
 	margin-top: 20px;
 }
 */
+
+li {
+	margin-left: 0px;
+}
+
+ol>li:last-child {
+	margin-bottom: 15px;
+}
 
 .team_inf>div {
 	margin-left: 10px;
@@ -191,10 +203,10 @@ span{
 table {
 	position: relative;
 	margin: auto;
-	top: 200px;
+	//top: 200px;
 	border-collapse: collapse;
 	width: 250px;
-	background-color: #a39893;
+	background-color: rgba(154,144,143, 0.3);
 	color: #441920;
 	font-size: 18px;
 }
@@ -206,7 +218,7 @@ tbody>tr {
 }
 
 tbody>tr>td {
-	border: 1px solid #6c6563;
+	border: 1px solid rgba(113,103,100, 0.3);
 	border-left: none;
 }
 
@@ -215,6 +227,6 @@ tbody>tr>td:last-child {
 }
 
 thead {
-	background-color: #6c6563;
+	background-color: rgba(113,103,100, 0.6);
 	color: #ec7370;
 }
