@@ -108,6 +108,11 @@ header {
 	min-height: 600px;
 	height: 100%;
 	box-shadow: 0px 1px 40px 1px rgba(0,0,0,0.5);
+
+	/*онли на расположение табл*/
+	display:grid;
+	grid-template-rows: 7px 40px 10px 1fr 20px;
+	grid-template-columns: 20px 1fr 20px;
 }
 
 footer {
@@ -144,7 +149,7 @@ footer {
 /***************************/
 /* CLASS BLOCK UNIC STYLES */
 /***************************/
-
+/*
 .signup {
 	display: grid;
 	grid-template-columns: repeat(12,1fr);
@@ -321,7 +326,90 @@ label[for="memberFirstName"] {
 .signup-form-submit:hover {
 	background-color: #333;
 	cursor: pointer;
+}*/
 
+.tableButton_inTable{
+	grid-row: 2;
+
+	grid-column: 2/4;
+}
+
+.tableButton_allTeams{
+	height: auto;
+	width: auto;
+
+	padding-left: 3.5vw;
+	padding-right: 3.1vw;
+	padding-top: 10px;
+	padding-bottom: 8px;
+	
+	background-color: #26292b;
+	float: left;	
+}
+
+.tableButton_allTeams input{
+	margin-right: 5px;
+	margin-top: 1.5%;
+	float: left;
+}
+
+.checkbox{
+	width: 20px;      
+	height: 20px;
+}
+
+.tableButton_allTeams p{
+	float: left;
+	font-size: 24px;
+	font-family:Arial;
+	color: #FFFFFF;
+}
+
+.table_aroundTeams{
+	grid-row: 4;
+	grid-column: 2;
+
+	background-color: #808486;
+
+	display:grid;
+	/*grid-template-rows: 7px 1fr 7px 10fr 7px;
+	grid-template-columns: 7px 5fr 13fr 23fr 10fr 10fr 12fr 10fr 10fr 10fr 7px;*/
+	grid-template-rows: 7px 1fr 7px 10fr 7px;
+	grid-template-columns: 7px 1fr 7px;
+
+	font-size: 24px;
+	font-family:Arial;
+	color: #FFFFFF;
+}
+
+.table_teams_head{
+	grid-row: 2;
+	grid-column: 2;
+}
+
+.table_teams_body{
+	grid-row: 4;
+	grid-column: 2;
+
+	background-color: #65696b;
+}
+
+.table_teams_stroke{
+	display:grid;
+	grid-template-rows: 48px;
+	grid-template-columns: 5fr 13fr 23fr 10fr 10fr 12fr 10fr 10fr 10fr;
+}
+
+.table_teams_stroke p{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-right: 2px solid #545859;
+}
+
+.table_teams_stroke p:last-child{
+    border-right: 0;
 }
 
 
