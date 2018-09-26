@@ -77,16 +77,17 @@ body{
 
 .block{
 	position: relative;
+	box-sizing: border-box;
 	text-align: center;
 	padding: 15px;
 	grid-row-start: 2;
 	grid-column-start: 1;
 	grid-column-end: 6;
 	background-color: rgba(255,255,255, 0.7);
-	min-height: 500px;
+	//min-height: 500px;
 	height: 100%;
 	box-shadow: 0 0 20px rgba(0,0,0,0.75);
-	margin-bottom: -40px;
+	//margin-bottom: -40px;
 }
 
 .col1{
@@ -112,6 +113,12 @@ body{
 .main-header{
 	font-family: 'Neucha', sans-serif;
 	font-size: 60px;
+	color: #ec7370;
+}
+
+.task-header{
+	font-family: 'Neucha', sans-serif;
+	font-size: 36px;
 	color: #ec7370;
 }
 
@@ -146,4 +153,96 @@ span{
 	text-decoration-style: none;
 	text-shadow: 1px 1px 2px black;
 	color: #ec7370;
+}
+
+.button, form>input{
+	border-radius:20px 20px 20px 20px;
+	border: 0px solid white;
+	outline: none;
+	width: 150px;
+	height: 25px;
+	//margin-left: 20px;
+	box-shadow: 0 1px 20px black;
+	text-align: center;
+}
+.button{
+	font-size: 20px;
+	color: #ec7370;
+	width: 100px;
+	border-radius: 3px 3px 3px 3px;
+	background-color: white;
+	font-family: "Neucha";
+	//margin:auto 45px;
+}
+ .button:hover{
+	background-color: MistyRose;
+	//box-shadow: 0 1px 25px black;//, inset 0 0 10px black;
+}
+ .button:active{
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.task-form{
+	position: absolute;
+	width: 250px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	bottom: 20px;
+}
+
+.timer{
+	font-size: 36px;
+	color: #441920;
+}
+
+.scores{
+	font-size: 20px;
+	color: #441920;
+}
+
+.scores-value{
+	color: #441920;
+}
+
+.task-answer{
+	font-size: 20px;
+	color: #441920;
+}
+
+.task-answer>span{
+	color: #441920;
+}
+
+.popup{
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.5); 
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+.popup-block{
+	box-shadow: 0 0 20px rgba(0,0,0,0.75);
+	text-align: center;
+	box-sizing: border-box;
+	padding: 10px 10px 40px 10px;
+	background-color: white;
+	position: relative;
+	left: 0;
+	right: 0;
+	top: 50%;
+	margin: 0 auto;
+	width: 250px;
+	height: 120px;
+	margin-top: -60px;
+}
+
+.popup-block>button{
+	display: inline-block;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
 }
