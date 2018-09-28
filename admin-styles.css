@@ -397,16 +397,23 @@ label[for="memberFirstName"] {
 .table_teams_stroke{
 	display:grid;
 	grid-template-rows: 48px;
-	grid-template-columns: 5fr 13fr 23fr 10fr 10fr 12fr 10fr 10fr 10fr;
+	grid-template-columns: 5fr 13fr 23fr 10fr 10fr 12fr 10fr 10fr 100px;
+	min-width: 842px;
 }
 
 .table_teams_stroke p{
 	display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 24px;
 
     border-right: 2px solid #545859;
 }
+
+.table_teams_body .table_teams_stroke p:last-child{
+	font-size: 16px;
+}
+
 
 .table_teams_stroke p:last-child{
     border-right: 0;
