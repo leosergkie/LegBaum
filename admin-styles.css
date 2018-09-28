@@ -374,7 +374,7 @@ label[for="memberFirstName"] {
 	display:grid;
 	/*grid-template-rows: 7px 1fr 7px 10fr 7px;
 	grid-template-columns: 7px 5fr 13fr 23fr 10fr 10fr 12fr 10fr 10fr 10fr 7px;*/
-	grid-template-rows: 7px 1fr 7px 10fr 7px;
+	grid-template-rows: 7px 48px 7px 1fr 7px;
 	grid-template-columns: 7px 1fr 7px;
 
 	font-size: 24px;
@@ -399,6 +399,11 @@ label[for="memberFirstName"] {
 	grid-template-rows: 48px;
 	grid-template-columns: 5fr 13fr 23fr 10fr 10fr 12fr 10fr 10fr 100px;
 	min-width: 842px;
+
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
 
 .table_teams_stroke p{
