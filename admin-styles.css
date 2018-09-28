@@ -250,4 +250,24 @@ footer {
 	border-radius: 2px;
 }
 
+.circle:last-child > .triangle {
+	display: none;
+}
+
+.wasted{
+	background-color: firebrick;
+}
+
+.successfull{
+	background-color: mediumspringgreen;
+}
+
+.current{
+	background-color: goldenrod;
+	//box-shadow: 0 0 20000px blue, 0 0 20000px blue, 0 0 20000px blue,0 0 20000px blue,0 0 20000px blue,0 0 20000px blue,0 0 20000px blue,0 0 20000px blue,0 0 20000px blue,0 0 20000px blue,0 0 20000px blue,0 0 20000px blue,0 0 20000px blue,0 0 20000px blue;
+}
+
+.unactive{
+	background-color: lightslategray;
+}
 /* -------------------- GALINA -----------------------*/
