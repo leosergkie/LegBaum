@@ -44,13 +44,13 @@ $(document).ready(function(){
     var timerId = setTimeout(function tick() {
         //console.log('tic');
         updateDATA();
-        timerId = setTimeout(tick, 1000);
-    }, 1000);
+        timerId = setTimeout(tick, 10000);
+    }, 10000);
 });
 
 function updateDATA(){
 	$(function(){
-    	$.getJSON('exp.json', function(data) { //сюда URL json'а
+    	$.getJSON('exp.json', function(data) { //сюда URL json'а (надо добавить передачу галки из чекбокса на сервер)$.getJSON('exp.json', {{data}}, function(data) {});
             for(var j=0;j<allTeams.length;j++){
                 var flag = 0;
                 for(var i=0;i<data.teams.length;i++){

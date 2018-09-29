@@ -353,10 +353,40 @@ label[for="memberFirstName"] {
 	float: left;
 }
 
-.checkbox{
-	width: 20px;      
-	height: 20px;
+/*---------Check--------*/
+.tableCheckbox {
+	display: none;
 }
+
+.tableCheckbox-custom {
+	position: relative;      
+	width: 18px;             
+	height: 18px;        
+
+	background: #ffffff;
+}
+
+.tableCheckbox-custom,
+.tableCheckLabel {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.tableCheckLabel {
+	font-size: 24px;
+	font-family:Arial;
+	color: #FFFFFF;
+}
+
+.tableCheckbox:checked + .tableCheckbox-custom::before {
+	content: "\2714";             
+	display: block;			 
+	position: absolute;      
+	
+	top: -2px;
+	left: 2px;     
+}
+/*------------Check-------------*/
 
 .tableButton_allTeams p{
 	float: left;
@@ -385,6 +415,8 @@ label[for="memberFirstName"] {
 .table_teams_head{
 	grid-row: 2;
 	grid-column: 2;
+
+	cursor: pointer;
 }
 
 .table_teams_body{
@@ -392,6 +424,8 @@ label[for="memberFirstName"] {
 	grid-column: 2;
 
 	background-color: #65696b;
+
+	cursor: pointer;
 }
 
 .table_teams_stroke{
