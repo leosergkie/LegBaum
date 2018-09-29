@@ -9,6 +9,8 @@ var currSortIndex = 0;
 
 var sortReverse = 1;
 
+var isCheckbox = $('.tableCheckbox').is(':checked');
+
 $(document).ready(function(){
     for(var i = 1; i<10;i++){
         $('.table_teams_head').children('.table_teams_stroke').children('#' + i).mousedown(function(eventObject){
@@ -37,6 +39,13 @@ $(document).ready(function(){
         });
     }
 
+    $('.tableCheckbox-custom').mouseup(function(eventObject){//принудительный вызов обновления данных при клике по chekbox
+        if(eventObject.which == 1){//только левая кнопка
+            isCheckbox = !isCheckbox;
+            updateDATA();
+        }
+    });
+
     //console.log($('.table_teams_body').children('.table_teams_stroke'));
 
     updateDATA();
@@ -52,7 +61,7 @@ $(document).ready(function(){
 
 function updateDATA(){
 	$(function(){
-    	$.getJSON('exp.json', $('.tableCheckbox').is(':checked'), function(data) { //сюда URL json'а (надо добавить передачу галки из чекбокса на сервер)$.getJSON('exp.json', {{data}}, function(data) {});
+    	$.getJSON('exp.json', isCheckbox, function(data) { //сюда URL json'а (надо добавить передачу галки из чекбокса на сервер)$.getJSON('exp.json', {{data}}, function(data) {});
             for(var j=0;j<allTeams.length;j++){
                 var flag = 0;
                 for(var i=0;i<data.teams.length;i++){
@@ -86,6 +95,8 @@ function updateDATA(){
             outputDATA();
     	});
 	});
+    //console.log(isCheckbox);
+    //console.log('update');
 }
 
 function outputDATA(){
