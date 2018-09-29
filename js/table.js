@@ -27,8 +27,32 @@ $(document).ready(function(){
 function updateDATA(){
 	$(function(){
     	$.getJSON('exp.json', function(data) {
+            for(var j=0;j<allTeams.length;j++){
+                var flag = 0;
+                for(var i=0;i<data.teams.length;i++){
+                    if(allTeams[j].team_id == data.teams[i].team_id){
+                        flag = 1;
+                        break;
+                    }
+                }
+    
+                if(!flag){
+                    allTeams.splice(j, 1);
+                }
+            }
+    
             for(var i=0;i<data.teams.length;i++){
-                allTeams[i] = data.teams[i];
+                var flag = 0;
+                for(var j=0;j<allTeams.length;j++){
+                    if(data.teams[i].team_id == allTeams[j].team_id){
+                        flag = 1;
+                        break;
+                    }
+                }
+    
+                if(!flag){
+                    allTeams.push(data.teams[i]);
+                }
             }
 
             sortDATA(currSort);
