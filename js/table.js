@@ -26,7 +26,7 @@ $(document).ready(function(){
     updateDATA();
 
     var timerId = setTimeout(function tick() {
-        console.log('tic');
+        //console.log('tic');
         updateDATA();
         timerId = setTimeout(tick, 1000);
     }, 1000);
@@ -184,4 +184,15 @@ function UNIXTimeToNormalTime(a){
 	return time;
 }
 
+$("#formId").submit({team_id: 1}, function(eventObject){
+    $("#formId").children([type="submit"]).attr({"value":"1"});
+    var externalData = "team_id=" + eventObject.data.team_id;
+    alert('Форма foo отправлена на сервер. '+
+        'В обработчик этого события переданы данные: ' + externalData );
+});
+
+//$('.table_teams_body').children('.table_teams_stroke').submit();
+$("#formId").submit();
+console.log($("#formId").children([type="submit"]).attr('value'));
+//alert($('.table_teams_body').children('.table_teams_stroke').eq(0));
 
