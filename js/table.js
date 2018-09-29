@@ -122,8 +122,9 @@ function outputDATA(){
                   allTeams[i].score
               + '</p>'
     
-              + '<p>' +
-                  allTeams[i].is_active
+              + '<p' + 
+                    coloredStatus(allTeams[i].is_active)//возвращает кусок <p> с классом и назание состояния
+                    //allTeams[i].is_active == "true"? 'finished':'unfinished'
               + '</p>'
         + '</div>');/*клон снизу*/
     }
@@ -207,6 +208,15 @@ function UNIXTimeToNormalTime(a){
 	time = time + Math.round(new Date(a*1000).getMinutes());
 
 	return time;
+}
+
+function coloredStatus(status){
+    console.log(status)
+    if(status == true){
+        return ' class = "finishedStatus">' + 'finished'
+    }else{
+        return ' class = "unfinishedStatus">' + 'unfinished'
+    }
 }
 
 /*$("#formId").submit({team_id: 3}, function(eventObject){
