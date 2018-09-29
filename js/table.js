@@ -184,15 +184,16 @@ function UNIXTimeToNormalTime(a){
 	return time;
 }
 
-$("#formId").submit({team_id: 1}, function(eventObject){
-    $("#formId").children([type="submit"]).attr({"value":"1"});
+$("#formId").submit({team_id: 3}, function(eventObject){
+    $("#formId").children([type="submit"]).attr({"value":eventObject.data.team_id});
     var externalData = "team_id=" + eventObject.data.team_id;
-    alert('Форма foo отправлена на сервер. '+
-        'В обработчик этого события переданы данные: ' + externalData );
+    console.log(externalData);
+    //eventObject.preventDefault();
 });
 
+$("#formId").children([type="submit"]).click();
 //$('.table_teams_body').children('.table_teams_stroke').submit();
-$("#formId").submit();
-console.log($("#formId").children([type="submit"]).attr('value'));
+//$("#formId").submit();
+//console.log($("#formId").children([type="submit"]).attr('value'));
 //alert($('.table_teams_body').children('.table_teams_stroke').eq(0));
 
