@@ -37,7 +37,7 @@ $(document).ready(function(){
         });
     }
 
-    console.log($('.table_teams_body').children('.table_teams_stroke'));
+    //console.log($('.table_teams_body').children('.table_teams_stroke'));
 
     updateDATA();
 
@@ -46,11 +46,13 @@ $(document).ready(function(){
         updateDATA();
         timerId = setTimeout(tick, 10000);
     }, 10000);
+
+    //console.log($('.tableCheckbox').is(':checked'));
 });
 
 function updateDATA(){
 	$(function(){
-    	$.getJSON('exp.json', function(data) { //сюда URL json'а (надо добавить передачу галки из чекбокса на сервер)$.getJSON('exp.json', {{data}}, function(data) {});
+    	$.getJSON('exp.json', $('.tableCheckbox').is(':checked'), function(data) { //сюда URL json'а (надо добавить передачу галки из чекбокса на сервер)$.getJSON('exp.json', {{data}}, function(data) {});
             for(var j=0;j<allTeams.length;j++){
                 var flag = 0;
                 for(var i=0;i<data.teams.length;i++){
@@ -211,7 +213,7 @@ function UNIXTimeToNormalTime(a){
 }
 
 function coloredStatus(status){
-    console.log(status)
+    //console.log(status)
     if(status == true){
         return ' class = "finishedStatus">' + 'finished'
     }else{
