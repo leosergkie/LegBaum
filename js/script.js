@@ -72,6 +72,7 @@ function n(n){
 
 for (key in mass.routers) {
 	var date_start = new Date(mass.routers[key].start_time);
+	
 	now = new Date(now.getTime());
 
 	var hrs = (now.getHours()-date_start.getHours());
@@ -88,10 +89,14 @@ for (key in mass.routers) {
 //alert(mass.routers[key].tasks_list.length);
 	for (i in mass.routers[key].tasks_list_ids)
 	{
+		var date_start0 = new Date(mass.routers[key].tasks_list[i].start_time);
+		var hrs = (now.getHours()-date_start0.getHours());
+		var mnts = (now.getMinutes()-date_start0.getMinutes());
+
 		if(mass.routers[key].tasks_list[i]){
-			$("<div class=\"circle\">		 <div class=\"d1 " + ((mass.routers[key].tasks_list[i].success != null) ? (mass.routers[key].tasks_list[i].success ? "successfull" : "wasted") :("current")) + "\"></div>								<p>ЭТАП " + mass.routers[key].tasks_list_ids[i] + "</p>											<p>5:35/10:00</p>									<div class=\"triangle\" id = \"triangle\">			</div>											</div>											</div>").appendTo("#block2" + key);
+			$("<div class=\"circle\">		 <div class=\"d1 " + ((mass.routers[key].tasks_list[i].success != null) ? (mass.routers[key].tasks_list[i].success ? "successfull" : "wasted") :("current")) + "\"></div>								<p>ЭТАП " + mass.routers[key].tasks_list_ids[i] + "</p>											<p>" + n(hrs) + ":" + n(mnts) + "/10:00</p>									<div class=\"triangle\" id = \"triangle\">			</div>											</div>											</div>").appendTo("#block2" + key);
 			} else{
-				$("<div class=\"circle\">		 <div class=\"d1 unactive\"></div>												<p>ЭТАП " + mass.routers[key].tasks_list_ids[i] + "</p>											<p>5:35/10:00</p>						<div class=\"triangle\" id = \"triangle\">			</div>											</div>											</div>").appendTo("#block2" + key);
+				$("<div class=\"circle\">		 <div class=\"d1 unactive\"></div>												<p>ЭТАП " + mass.routers[key].tasks_list_ids[i] + "</p>											<p>00:00/10:00</p>						<div class=\"triangle\" id = \"triangle\">			</div>											</div>											</div>").appendTo("#block2" + key);
 			}
 		}
 
