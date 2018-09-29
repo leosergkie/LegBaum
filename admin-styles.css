@@ -374,7 +374,7 @@ label[for="memberFirstName"] {
 	display:grid;
 	/*grid-template-rows: 7px 1fr 7px 10fr 7px;
 	grid-template-columns: 7px 5fr 13fr 23fr 10fr 10fr 12fr 10fr 10fr 10fr 7px;*/
-	grid-template-rows: 7px 48px 7px 1fr 7px;
+	grid-template-rows: 7px 55px 7px 1fr 7px;
 	grid-template-columns: 7px 1fr 7px;
 
 	font-size: 24px;
@@ -396,7 +396,7 @@ label[for="memberFirstName"] {
 
 .table_teams_stroke{
 	display:grid;
-	grid-template-rows: 48px;
+	grid-template-rows: 55px;
 	grid-template-columns: 5fr 13fr 23fr 10fr 10fr 12fr 10fr 10fr 100px;
 	min-width: 842px;
 
@@ -404,6 +404,10 @@ label[for="memberFirstName"] {
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
+}
+
+.table_teams_body .table_teams_stroke:hover{
+	background-color: #808486;
 }
 
 .table_teams_stroke p{
@@ -419,14 +423,25 @@ label[for="memberFirstName"] {
 	font-size: 16px;
 }
 
-
 .table_teams_stroke p:last-child{
     border-right: 0;
 }
 
 #formId{
-	background-color: red;
-	display: none;
+	background-color: red;	
+	display: none;	
+}
+
+.sortUp{
+	background: linear-gradient(to top, #808486, #545859);
+}	
+
+.sortDown{
+	background: linear-gradient(to top, #545859, #808486);
+}
+
+.table_teams_head .table_teams_stroke p:hover{
+	background-color: #65696b;
 }
 
 

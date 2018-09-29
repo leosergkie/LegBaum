@@ -4,24 +4,40 @@ var arrAlgSort = ['team_id', 'name', 'leader_name',
                   'number_of_tasks', 'start_time', 'finish_time', 
                   'fails_count', 'score', 'is_active'];
 
-var currSort = '';
+var currSort = 'team_id';
+var currSortIndex = 0;
 
 var sortReverse = 1;
 
 $(document).ready(function(){
     for(var i = 1; i<10;i++){
         $('.table_teams_head').children('.table_teams_stroke').children('#' + i).mousedown(function(eventObject){
-            if(currSort != arrAlgSort[$(this).attr('id')-1]){
+            currSortIndex = $(this).attr('id');
+
+            $('.table_teams_head').children('.table_teams_stroke').children('.sortUp').removeClass('sortUp');
+            $('.table_teams_head').children('.table_teams_stroke').children('.sortDown').removeClass('sortDown');
+
+            if(currSort != arrAlgSort[currSortIndex-1]){
                 sortReverse = 1;
+
+                $('.table_teams_head').children('.table_teams_stroke').children('[id = ' + currSortIndex +']').addClass('sortUp');
             }else{
                 sortReverse*=-1;
+
+                if(sortReverse == 1){
+                    $('.table_teams_head').children('.table_teams_stroke').children('[id = ' + currSortIndex +']').addClass('sortUp');
+                }else{
+                    $('.table_teams_head').children('.table_teams_stroke').children('[id = ' + currSortIndex +']').addClass('sortDown');
+                }
             }
 
-            sortDATA(arrAlgSort[$(this).attr('id')-1]);
+            sortDATA(arrAlgSort[currSortIndex - 1]);
             /*console.log($(this).attr('id'));*/
             outputDATA();
         });
     }
+
+    console.log($('.table_teams_body').children('.table_teams_stroke'));
 
     updateDATA();
 
@@ -34,7 +50,7 @@ $(document).ready(function(){
 
 function updateDATA(){
 	$(function(){
-    	$.getJSON('exp.json', function(data) {
+    	$.getJSON('exp.json', function(data) { //сюда URL json'а
             for(var j=0;j<allTeams.length;j++){
                 var flag = 0;
                 for(var i=0;i<data.teams.length;i++){
@@ -111,6 +127,15 @@ function outputDATA(){
               + '</p>'
         + '</div>');/*клон снизу*/
     }
+
+    /*отправка id команды на которую кликнули*/
+    $('.table_teams_body').children('.table_teams_stroke').mousedown(function(eventObject){
+        if(eventObject.which == 1){//только левая кнопка
+            //console.log($(this).children().eq(0).text());
+            $("#formId").children([name="team_id"]).attr({"value":$(this).children().eq(0).text()});
+            $("#formId").children([name="team_id"]).click();/*клик по input для отправки*/
+        }
+    });
 }
 
 function sortDATA(param){
@@ -184,14 +209,14 @@ function UNIXTimeToNormalTime(a){
 	return time;
 }
 
-$("#formId").submit({team_id: 3}, function(eventObject){
+/*$("#formId").submit({team_id: 3}, function(eventObject){
     $("#formId").children([type="submit"]).attr({"value":eventObject.data.team_id});
     var externalData = "team_id=" + eventObject.data.team_id;
     console.log(externalData);
     //eventObject.preventDefault();
-});
+});*/
 
-$("#formId").children([type="submit"]).click();
+//$("#formId").children([type="submit"]).click();
 //$('.table_teams_body').children('.table_teams_stroke').submit();
 //$("#formId").submit();
 //console.log($("#formId").children([type="submit"]).attr('value'));
