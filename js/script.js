@@ -93,6 +93,13 @@ for (key in mass.routers) {
 		var hrs = (now.getHours()-date_start0.getHours());
 		var mnts = (now.getMinutes()-date_start0.getMinutes());
 
+	if(hrs < 0){
+		hrs = (now.getHours()-date_start0.getHours() +24);
+	}
+	if(mnts < 0){
+		mnts = (now.getMinutes()-date_start0.getMinutes() + 60);
+	}
+
 		if(mass.routers[key].tasks_list[i]){
 			$("<div class=\"circle\">		 <div class=\"d1 " + ((mass.routers[key].tasks_list[i].success != null) ? (mass.routers[key].tasks_list[i].success ? "successfull" : "wasted") :("current")) + "\"></div>								<p>ЭТАП " + mass.routers[key].tasks_list_ids[i] + "</p>											<p>" + n(hrs) + ":" + n(mnts) + "/10:00</p>									<div class=\"triangle\" id = \"triangle\">			</div>											</div>											</div>").appendTo("#block2" + key);
 			} else{
