@@ -309,11 +309,11 @@ footer {
 }
 
 /*---------Check--------*/
-.tableCheckbox {
+.tableCheckbox{
 	display: none;
 }
 
-.tableCheckbox-custom {
+.tableCheckbox-custom{
 	position: relative;      
 	width: 18px;             
 	height: 18px;        
@@ -438,6 +438,10 @@ footer {
 
 .failColorText{
 	color: #b05959;
+}
+
+.currColorText{
+	color: #ffffff;
 }
 
 .doneColorCircle{

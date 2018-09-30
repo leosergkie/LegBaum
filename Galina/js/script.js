@@ -42,9 +42,16 @@ for (key in mass.routers) {
 }*/
 var allTeams = [];
 
-var isCheckbox = true;
+var isCheckbox2 = $('.tableCheckbox.checkbox2').is(':checked');
 
 $(document).ready(function(){
+    $('.tableCheckbox-custom.checkbox2').mouseup(function(eventObject){//принудительный вызов обновления данных при клике по chekbox
+        if(eventObject.which == 1){//только левая кнопка
+            isCheckbox2 = !isCheckbox2;
+            outputDATA();
+        }
+    });
+
     updateDATA();
     outputDATA();
 
@@ -61,7 +68,7 @@ $(document).ready(function(){
 
 function updateDATA(){
   $(function(){
-      $.getJSON('test.json', isCheckbox, function(data) { //сюда URL json'а (надо добавить передачу галки из чекбокса на сервер)$.getJSON('exp.json', {{data}}, function(data) {});
+      $.getJSON('test.json', isCheckbox2, function(data) { //сюда URL json'а (надо добавить передачу галки из чекбокса на сервер)$.getJSON('exp.json', {{data}}, function(data) {});
             for(var j=0;j<allTeams.length;j++){
                 var flag = 0;
                 for(var i=0;i<data.routers.length;i++){
@@ -100,7 +107,7 @@ function updateDATA(){
 function outputDATA(){
     $('.listAllTeams').children().remove();
     for(var i=0;i<allTeams.length;i++){
-       //if(!allTeams[i].is_active || isCheckbox){//вывод всех или только не финишировших
+       //if(!allTeams[i].is_active || isCheckbox2){//вывод всех или только не финишировших
             $('.listAllTeams').append('<div class="oneTeamInList">' +
                   createHead(allTeams[i])
                   + 
