@@ -44,13 +44,28 @@ var allTeams = [];
 
 var isCheckbox = true;
 
+$(document).ready(function(){
+    updateDATA();
+    outputDATA();
+
+    var timer1 = setTimeout(function tick1() {//обновление вместе с сервером
+        updateDATA();
+        timer1 = setTimeout(tick1, 10000);
+    }, 10000);
+
+    var timer2 = setTimeout(function tick2() {//обновление без сервером
+        outputDATA();
+        timer2 = setTimeout(tick2, 1000);
+    }, 1000);
+});
+
 function updateDATA(){
   $(function(){
       $.getJSON('test.json', isCheckbox, function(data) { //сюда URL json'а (надо добавить передачу галки из чекбокса на сервер)$.getJSON('exp.json', {{data}}, function(data) {});
             for(var j=0;j<allTeams.length;j++){
                 var flag = 0;
                 for(var i=0;i<data.routers.length;i++){
-                    if(allTeams[j].team_id == data.routers[i].team_id){
+                    if(allTeams[j].team_id == data.routers[i].team_id && allTeams[j].tasks_list.length == data.routers[i].tasks_list.length){
                         flag = 1;
                         break;
                     }
@@ -64,7 +79,7 @@ function updateDATA(){
             for(var i=0;i<data.routers.length;i++){
                 var flag = 0;
                 for(var j=0;j<allTeams.length;j++){
-                    if(data.routers[i].team_id == allTeams[j].team_id){
+                    if(data.routers[i].team_id == allTeams[j].team_id && allTeams[j].tasks_list.length == data.routers[i].tasks_list.length){
                         flag = 1;
                         break;
                     }
@@ -75,7 +90,7 @@ function updateDATA(){
                 }
             }
 
-            outputDATA();
+            //outputDATA();
       });
   });
     //console.log(isCheckbox);
@@ -257,12 +272,6 @@ function currTime(){
 }
 
 //console.log(UNIXTimeToNormalTimeMinuteSec(currTime() - 1538303051));
-
-var timerId = setTimeout(function tick() {
-    //console.log('tic');
-    outputDATA();
-    timerId = setTimeout(tick, 1000);
-}, 1000);
 
 
 
