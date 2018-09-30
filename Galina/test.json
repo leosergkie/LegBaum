@@ -4,7 +4,7 @@
       "team_id": 3,
       "team_name": "DreamTeam",
       "players_count": 3,
-      "fail_count": 0,
+      "fail_count": 1,
       "start_time": 15213112,
       "tasks_list_ids": [
         5,
@@ -18,19 +18,22 @@
           "start_time": 15235231,
           "task_id": 5,
           "success": false,
-          "finish_time": null
+          "finish_time": null,
+          "duration": 300
         },
         {
           "success": true,
           "task_id": 1,
           "start_time": 15232131,
-          "finish_time": 15235131
+          "finish_time": 15235131,
+          "duration": 300
         },
         {
           "success": null,
           "start_time": 15245231,
           "task_id": 6,
-          "finish_time": null
+          "finish_time": null,
+          "duration": 300
         }
       ]
     },
@@ -52,7 +55,205 @@
           "finish_time": null,
           "task_id": 8,
           "start_time": 15245612,
-          "success": null
+          "success": null,
+          "duration": 300
+        }
+      ]
+    },
+    {
+      "team_id": 8,
+      "team_name": "ИУ3-91",
+      "fail_count": 2,
+      "start_time": 15245612,
+      "players_count": 4,
+      "tasks_list_ids": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "tasks_list": [
+        {
+          "finish_time": 15235131,
+          "task_id": 8,
+          "start_time": 15245612,
+          "success": true,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 9,
+          "start_time": 15245612,
+          "success": true,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 10,
+          "start_time": 15245612,
+          "success": false,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 11,
+          "start_time": 15245612,
+          "success": false,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 12,
+          "start_time": 15245612,
+          "success": null,
+          "duration": 300
+        }
+      ]
+    },
+    {
+      "team_id": 9,
+      "team_name": "ИУ3-91",
+      "fail_count": 2,
+      "start_time": 15245612,
+      "players_count": 4,
+      "tasks_list_ids": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "tasks_list": [
+        {
+          "finish_time": 15235131,
+          "task_id": 8,
+          "start_time": 15245612,
+          "success": true,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 9,
+          "start_time": 15245612,
+          "success": true,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 10,
+          "start_time": 15245612,
+          "success": false,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 11,
+          "start_time": 15245612,
+          "success": false,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 12,
+          "start_time": 15245612,
+          "success": null,
+          "duration": 300
+        }
+      ]
+    },
+    {
+      "team_id": 10,
+      "team_name": "ИУ3-91",
+      "fail_count": 0,
+      "start_time": 15245612,
+      "players_count": 4,
+      "tasks_list_ids": [
+        8,
+        5,
+        1,
+        6,
+        7
+      ],
+      "tasks_list": [
+        {
+          "finish_time": null,
+          "task_id": 8,
+          "start_time": 15245612,
+          "success": null,
+          "duration": 300
+        }
+      ]
+    },
+    {
+      "team_id": 11,
+      "team_name": "ИУ3-91",
+      "fail_count": 0,
+      "start_time": 15245612,
+      "players_count": 4,
+      "tasks_list_ids": [
+        8,
+        5,
+        1,
+        6,
+        7
+      ],
+      "tasks_list": [
+        {
+          "finish_time": null,
+          "task_id": 8,
+          "start_time": 15245612,
+          "success": null,
+          "duration": 300
+        }
+      ]
+    },
+    {
+      "team_id": 12,
+      "team_name": "ИУ3-91",
+      "fail_count": 0,
+      "start_time": 15245612,
+      "players_count": 4,
+      "tasks_list_ids": [
+        8,
+        5,
+        1,
+        6,
+        7
+      ],
+      "tasks_list": [
+        {
+          "finish_time": null,
+          "task_id": 8,
+          "start_time": 15245612,
+          "success": null,
+          "duration": 300
+        }
+      ]
+    },
+    {
+      "team_id": 13,
+      "team_name": "ИУ3-91",
+      "fail_count": 0,
+      "start_time": 15245612,
+      "players_count": 4,
+      "tasks_list_ids": [
+        8,
+        5,
+        1,
+        6,
+        7
+      ],
+      "tasks_list": [
+        {
+          "finish_time": null,
+          "task_id": 8,
+          "start_time": 15245612,
+          "success": null,
+          "duration": 300
         }
       ]
     }

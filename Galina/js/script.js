@@ -72,7 +72,7 @@ function updateDATA(){
             for(var j=0;j<allTeams.length;j++){
                 var flag = 0;
                 for(var i=0;i<data.routers.length;i++){
-                    if(allTeams[j].team_id == data.routers[i].team_id && allTeams[j].tasks_list.length == data.routers[i].tasks_list.length){
+                    if(allTeams[j].team_id == data.routers[i].team_id){
                         flag = 1;
                         break;
                     }
@@ -86,7 +86,10 @@ function updateDATA(){
             for(var i=0;i<data.routers.length;i++){
                 var flag = 0;
                 for(var j=0;j<allTeams.length;j++){
-                    if(data.routers[i].team_id == allTeams[j].team_id && allTeams[j].tasks_list.length == data.routers[i].tasks_list.length){
+                    if(data.routers[i].team_id == allTeams[j].team_id){
+                        if(allTeams[j].tasks_list.length != data.routers[i].tasks_list.length){
+                            allTeams[j] =  data.routers[i];
+                        }
                         flag = 1;
                         break;
                     }
@@ -118,13 +121,13 @@ function outputDATA(){
     }
 
     /*отправка id команды на которую кликнули*/
-    $('.table_teams_body').children('.table_teams_stroke').mousedown(function(eventObject){
+    /*$('.table_teams_body').children('.table_teams_stroke').mousedown(function(eventObject){
         if(eventObject.which == 1){//только левая кнопка
             //console.log($(this).children().eq(0).text());
             $("#formId").children([name="team_id"]).attr({"value":$(this).children().eq(0).text()});
             $("#formId").children([name="team_id"]).click();/*клик по input для отправки*/
-        }
-    });
+        /*}
+    });*/
 }
 
 function createHead(team){
@@ -170,7 +173,7 @@ function createBlock(team, i){
         +
         '<p class="firstTextInBlock">ЭТАП ' + team.tasks_list_ids[i] + '</p>'
         +
-        '<p class="secondTextInBlock"><span class="notActiveText">00:00</span>/10:00</p>';
+        '<p class="secondTextInBlock"><span class="notActiveText">00:00</span>/00:00</p>';
     }
 
     block = block + '<div class="triangleInBlock"></div></div>'
@@ -179,14 +182,10 @@ function createBlock(team, i){
 
 function createPropTeam(team){
     var numComplete = 0;
-    var numFails = 0;
 
     for(var i=0;i<team.tasks_list.length; i++){
         if(team.tasks_list[i].success == true){
             numComplete++;
-        }
-        if(team.tasks_list[i].success == false){
-            numFails++;
         }
     }
 
@@ -197,7 +196,7 @@ function createPropTeam(team){
     + 
     '</p><p>Времени прошло: ' 
     +
-    UNIXTimeToNormalTimeHoursMinute(currTime() - team.start_time)
+    UNIXTimeToNormalTimeHoursMinuteSec(currTime() - team.start_time)
     +
     '</p><p>Этапов пройдено: '
     +
@@ -205,11 +204,11 @@ function createPropTeam(team){
     +
     '/15</p><p> Этапов провалено: '
     +
-    numFails
+    team.fail_count
     +
     '</p><p> Опережение графика: '
     +
-    '+3:15'
+    '--:--'
     +'</p></div>';
     return prop;
 }
@@ -234,14 +233,14 @@ function coloredBlockTime(team, i){
         +
         UNIXTimeToNormalTimeMinuteSec(currTime() - team.tasks_list[i].start_time)
         +
-        '</span>/10:00</p>';
+        '</span>/' + UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].duration) +'</p>';
     }else{
         if(team.tasks_list[i].success == true){
             cTime = '<p class="secondTextInBlock"><span class="doneColorText">'
             +
             UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].finish_time)
             +
-            '</span>/10:00</p>';
+            '</span>/' + UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].duration) +'</p>';
         }else{
             cTime = '<p class="secondTextInBlock"><span class="failColorText">Потрачено</span></p>';
         }
@@ -251,7 +250,7 @@ function coloredBlockTime(team, i){
 }
 
 function UNIXTimeToNormalTimeHoursMinute(a){
-  time = Math.round(new Date(a*1000).getHours()) + ':';
+  var time = Math.round(new Date(a*1000).getHours()) + ':';
 
   if(Math.round(new Date(a*1000).getMinutes()) < 10){
     time = time + '0';
@@ -263,7 +262,7 @@ function UNIXTimeToNormalTimeHoursMinute(a){
 }
 
 function UNIXTimeToNormalTimeMinuteSec(a){
-  time = Math.round(new Date(a*1000).getMinutes()) + ':';
+  var time = Math.round(new Date(a*1000).getMinutes()) + ':';
 
   if(Math.round(new Date(a*1000).getSeconds()) < 10){
     time = time + '0';
@@ -272,6 +271,17 @@ function UNIXTimeToNormalTimeMinuteSec(a){
   time = time + Math.round(new Date(a*1000).getSeconds());
 
   return time;
+}
+
+function UNIXTimeToNormalTimeHoursMinuteSec(a){
+    var time = UNIXTimeToNormalTimeHoursMinute(a) + ':';
+
+    if(Math.round(new Date(a*1000).getSeconds()) < 10){
+        time = time + '0';
+    }
+
+    time = time + Math.round(new Date(a*1000).getSeconds());
+    return time;
 }
 
 function currTime(){
