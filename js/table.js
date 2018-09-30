@@ -102,7 +102,7 @@ function updateDATA(){
 function outputDATA(){
     $('.table_teams_body').children().remove();
     for(var i=0;i<allTeams.length;i++){
-        if(!allTeams[i].is_active || isCheckbox){//вывод всех или только не финишировших
+        if(allTeams[i].is_active || isCheckbox){//вывод всех или только не финишировших
             $('.table_teams_body').append('<div class="table_teams_stroke">' +
                   '<p>' +
                       allTeams[i].team_id
@@ -227,7 +227,7 @@ function UNIXTimeToNormalTime(a){
 
 function coloredStatus(status){
     //console.log(status)
-    if(status == true){
+    if(status == false){
         return ' class = "finishedStatus">' + 'finished'
     }else{
         return ' class = "unfinishedStatus">' + 'unfinished'

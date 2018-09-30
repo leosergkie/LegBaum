@@ -1,0 +1,61 @@
+{
+  "routers": [
+    {
+      "team_id": 3,
+      "team_name": "DreamTeam",
+      "players_count": 3,
+      "fail_count": 0,
+      "start_time": 15213112,
+      "tasks_list_ids": [
+        5,
+        1,
+        6,
+        7,
+        8
+      ],
+      "tasks_list": [
+        {
+          "start_time": 15235231,
+          "task_id": 5,
+          "success": false,
+          "finish_time": null
+        },
+        {
+          "success": true,
+          "task_id": 1,
+          "start_time": 15232131,
+          "finish_time": 15235131
+        },
+        {
+          "success": null,
+          "start_time": 15245231,
+          "task_id": 6,
+          "finish_time": null
+        }
+      ]
+    },
+    {
+      "team_id": 7,
+      "team_name": "ИУ3-91",
+      "fail_count": 0,
+      "start_time": 15245612,
+      "players_count": 4,
+      "tasks_list_ids": [
+        8,
+        5,
+        1,
+        6,
+        7
+      ],
+      "tasks_list": [
+        {
+          "finish_time": null,
+          "task_id": 8,
+          "start_time": 15245612,
+          "success": null
+        }
+      ]
+    }
+  ]
+}
+
