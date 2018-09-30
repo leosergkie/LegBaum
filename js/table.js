@@ -102,44 +102,46 @@ function updateDATA(){
 function outputDATA(){
     $('.table_teams_body').children().remove();
     for(var i=0;i<allTeams.length;i++){
-        $('.table_teams_body').append('<div class="table_teams_stroke">' +
-              '<p>' +
-                  allTeams[i].team_id
-              + '</p>'
-    
-              + '<p>' +
-                  allTeams[i].name
-              + '</p>'
-    
-              + '<p>' +   
-                  allTeams[i].leader_name
-              + '</p>'
-    
-              + '<p>' +
-                  allTeams[i].number_of_tasks
-              + '</p>'
-    
-              + '<p>' +
-                  UNIXTimeToNormalTime(allTeams[i].start_time)
-              + '</p>'
-    
-              + '<p>' +
-                  UNIXTimeToNormalTime(allTeams[i].finish_time)
-              + '</p>'
-    
-              + '<p>' +
-                  allTeams[i].fails_count
-              + '</p>'
-    
-              + '<p>' +
-                  allTeams[i].score
-              + '</p>'
-    
-              + '<p' + 
+        if(!allTeams[i].is_active || isCheckbox){//вывод всех или только не финишировших
+            $('.table_teams_body').append('<div class="table_teams_stroke">' +
+                  '<p>' +
+                      allTeams[i].team_id
+                  + '</p>'
+        
+                  + '<p>' +
+                      allTeams[i].name
+                  + '</p>'
+        
+                  + '<p>' +   
+                      allTeams[i].leader_name
+                  + '</p>'
+        
+                  + '<p>' +
+                      allTeams[i].number_of_tasks
+                  + '</p>'
+        
+                  + '<p>' +
+                      UNIXTimeToNormalTime(allTeams[i].start_time)
+                  + '</p>'
+        
+                  + '<p>' +
+                      UNIXTimeToNormalTime(allTeams[i].finish_time)
+                  + '</p>'
+        
+                  + '<p>' +
+                      allTeams[i].fails_count
+                  + '</p>'
+        
+                  + '<p>' +
+                      allTeams[i].score
+                  + '</p>'
+        
+                  + '<p' + 
                     coloredStatus(allTeams[i].is_active)//возвращает кусок <p> с классом и назание состояния
-                    //allTeams[i].is_active == "true"? 'finished':'unfinished'
-              + '</p>'
-        + '</div>');/*клон снизу*/
+                        //allTeams[i].is_active == "true"? 'finished':'unfinished'
+                  + '</p>'
+            + '</div>');/*клон снизу*/
+        }
     }
 
     /*отправка id команды на которую кликнули*/
