@@ -128,7 +128,7 @@ function outputDATA(){
                       UNIXTimeToNormalTime(allTeams[i].finish_time)
                   + '</p>'
         
-                  + '<p>' +
+                  + '<p class="failColor">' +
                       allTeams[i].fails_count
                   + '</p>'
         
