@@ -17,7 +17,7 @@
       "leader_name": "Тони Старк",
       "name": "Avengers",
       "start_time": 1537790400,
-      "finish_time": 1537801200,
+      "finish_time": null,
       "number_of_tasks": 3,
       "total_number_of_tasks": 15,
       "fails_count": 0,
