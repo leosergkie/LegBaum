@@ -325,6 +325,11 @@ footer {
 .tableCheckLabel {
 	display: inline-block;
 	vertical-align: middle;
+	
+	-ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
 
 .tableCheckLabel {

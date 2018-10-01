@@ -42,7 +42,7 @@ $(document).ready(function(){
     $('.tableCheckbox-custom').mouseup(function(eventObject){//принудительный вызов обновления данных при клике по chekbox
         if(eventObject.which == 1){//только левая кнопка
             isCheckbox = !isCheckbox;
-            updateDATA();
+            outputDATA();
         }
     });
 
