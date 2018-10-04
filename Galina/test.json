@@ -7,11 +7,11 @@
       "fail_count": 1,
       "start_time": 15213112,
       "tasks_list_ids": [
-        5,
-        1,
-        6,
+        8,
         7,
-        8
+        6,
+        5,
+        1
       ],
       "tasks_list": [
         {
@@ -23,7 +23,7 @@
         },
         {
           "success": true,
-          "task_id": 1,
+          "task_id": 6,
           "start_time": 15232131,
           "finish_time": 15235131,
           "duration": 300
@@ -31,7 +31,7 @@
         {
           "success": null,
           "start_time": 15245231,
-          "task_id": 6,
+          "task_id": 1,
           "finish_time": null,
           "duration": 300
         }
@@ -122,10 +122,15 @@
         9,
         10,
         11,
-        12,
         13,
         14,
-        15
+        15,
+        16,
+        12,
+        17,
+        18,
+        19,
+        20
       ],
       "tasks_list": [
         {
@@ -161,6 +166,34 @@
           "task_id": 12,
           "start_time": 15245612,
           "success": null,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 13,
+          "start_time": 15245612,
+          "success": true,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 14,
+          "start_time": 15245612,
+          "success": true,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 15,
+          "start_time": 15245612,
+          "success": true,
+          "duration": 300
+        },
+        {
+          "finish_time": 15235131,
+          "task_id": 16,
+          "start_time": 15245612,
+          "success": true,
           "duration": 300
         }
       ]

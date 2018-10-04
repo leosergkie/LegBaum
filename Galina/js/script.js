@@ -161,13 +161,13 @@ function createList(team){
 
 function createBlock(team, i){
     var block = '<div class = "blockWithCircle">'; 
-
-    if(i<team.tasks_list.length){
-        block = block + '<div class="oneCircleInBlock ' + coloredCircle(team.tasks_list[i]) + '"></div>'
+    var j = findIdInTasksList(team.tasks_list_ids[i], team);
+    if(j >= 0){
+        block = block + '<div class="oneCircleInBlock ' + coloredCircle(team.tasks_list[j]) + '"></div>'
         +
         '<p class="firstTextInBlock">ЭТАП ' + team.tasks_list_ids[i] + '</p>'
         +
-        coloredBlockTime(team, i);
+        coloredBlockTime(team, j);
     }else{
         block = block + '<div class="oneCircleInBlock notActiveCircle"></div>'
         +
@@ -286,6 +286,16 @@ function UNIXTimeToNormalTimeHoursMinuteSec(a){
 
 function currTime(){
     return parseInt(new Date().getTime()/1000)
+}
+
+function findIdInTasksList(id, team){
+    for (var i = 0; i<team.tasks_list.length; i++){
+        if(team.tasks_list[i].task_id == id){
+            return i;
+        }
+    }
+
+    return -1;
 }
 
 //console.log(UNIXTimeToNormalTimeMinuteSec(currTime() - 1538303051));
