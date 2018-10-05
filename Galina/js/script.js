@@ -250,7 +250,7 @@ function UNIXTimeToNormalTimeHoursMinuteSec(a){
 }
 
 function currTime(){
-    return parseInt(new Date().getTime()/1000)
+    return parseInt(new Date().getTime()/1000 - 3600*3)
 }
 
 function findIdInTasksList(id, team){
