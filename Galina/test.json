@@ -97,6 +97,110 @@
 "finish_time" : 1538737690,
 "start_time" : 1538737660,
 "content": "Красная площадь"
+},
+{
+"task_id" : 7,
+"success" : null,
+"start_time" : null,
+"finish_time" : null,
+"duration" : 30,
+"content": "Красная площадь"
+},
+{
+"success" : null,
+"task_id" : 17,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "Красная площадь"
+},
+{
+"success" : null,
+"task_id" : 24,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "Красная площадь"
+},
+{
+"task_id" : 19,
+"success" : null,
+"start_time" : null,
+"finish_time" : null,
+"duration" : 30,
+"content": "Красная площадь"
+},
+{
+"success" : null,
+"task_id" : 4,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "Красная площадь"
+},
+{
+"success" : null,
+"task_id" : 10,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "Красная площадь"
+},
+{
+"task_id" : 1,
+"success" : null,
+"start_time" : null,
+"finish_time" : null,
+"duration" : 30,
+"content": "номер2"
+},
+{
+"success" : null,
+"task_id" : 21,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "этап3"
+},
+{
+"success" : null,
+"task_id" : 16,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "что-то4"
+},
+{
+"task_id" : 22,
+"success" : null,
+"start_time" : null,
+"finish_time" : null,
+"duration" : 30,
+"content": "Красная площадь"
+},
+{
+"success" : null,
+"task_id" : 2,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "Красная площадь"
+},
+{
+"success" : null,
+"task_id" : 14,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "Красная площадь"
+},
+{
+"success" : null,
+"task_id" : 13,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "Красная площадь"
 }
 ],
 "start_time" : 1538737449,
@@ -228,6 +332,30 @@
 "duration" : 30,
 "finish_time" : 1538737690,
 "start_time" : 1538737660,
+"content": "Красная площадь"
+},
+{
+"task_id" : 7,
+"success" : null,
+"start_time" : null,
+"finish_time" : null,
+"duration" : 30,
+"content": "Красная площадь"
+},
+{
+"success" : null,
+"task_id" : 17,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
+"content": "Красная площадь"
+},
+{
+"success" : null,
+"task_id" : 24,
+"duration" : 30,
+"start_time" : null,
+"finish_time" : null,
 "content": "Красная площадь"
 }
 ],

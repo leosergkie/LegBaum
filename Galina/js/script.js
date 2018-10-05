@@ -126,7 +126,7 @@ function createBlock(team, i){
         '<p class="firstTextInBlock">' + team.tasks_list[j].content + '</p>'
         +
         coloredBlockTime(team, j);
-    }else{
+    }else{//если бло не найден
         block = block + '<div class="oneCircleInBlock notActiveCircle"></div>'
         +
         '<p class="firstTextInBlock">ЭТАП ' + team.tasks_list_ids[i] + '</p>'
@@ -169,13 +169,15 @@ function createPropTeam(team){
 }
 
 function coloredCircle(param){
-    if(param.success == true){
-        return 'doneColorCircle';
-    }else{
-        if(param.success == false){
-            return 'failColorCircle';
+    if(param.start_time != null){
+        if(param.success == true){
+            return 'doneColorCircle';
         }else{
-            return 'currColorCircle';
+            if(param.success == false){
+                return 'failColorCircle';
+            }else{
+                return 'currColorCircle';
+            }
         }
     }
 }
@@ -183,22 +185,30 @@ function coloredCircle(param){
 function coloredBlockTime(team, i){
     var cTime;
 
-    if(team.tasks_list[i].success == null){
-        cTime = '<p class="secondTextInBlock"><span class="currColorText">'
-        +
-        UNIXTimeToNormalTimeMinuteSec(currTime() - team.tasks_list[i].start_time)
-        +
-        '</span>/' + UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].duration) +'</p>';
-    }else{
-        if(team.tasks_list[i].success == true){
-            cTime = '<p class="secondTextInBlock"><span class="doneColorText">'
+    if(team.tasks_list[i].start_time != null){
+        if(team.tasks_list[i].success == null){
+            cTime = '<p class="secondTextInBlock"><span class="currColorText">'
             +
-            UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].finish_time - team.tasks_list[i].start_time)
+            UNIXTimeToNormalTimeMinuteSec(currTime() - team.tasks_list[i].start_time)
             +
             '</span>/' + UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].duration) +'</p>';
         }else{
-            cTime = '<p class="secondTextInBlock"><span class="failColorText">Потрачено</span></p>';
+            if(team.tasks_list[i].success == true){
+                cTime = '<p class="secondTextInBlock"><span class="doneColorText">'
+                +
+                UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].finish_time - team.tasks_list[i].start_time)
+                +
+                '</span>/' + UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].duration) +'</p>';
+            }else{
+                cTime = '<p class="secondTextInBlock"><span class="failColorText">Потрачено</span></p>';
+            }
         }
+    }else{
+         cTime = '<p class="secondTextInBlock"><span class="notActiveText">'
+        +
+        '00:00'
+        +
+        '</span>/' + UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].duration) +'</p>';
     }
 
     return cTime;
