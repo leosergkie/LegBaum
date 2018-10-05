@@ -83,7 +83,7 @@
 "content": "Красная площадь"
 },
 {
-"success" : true,
+"success" : false,
 "task_id" : 23,
 "duration" : 30,
 "finish_time" : 1538737660,
@@ -215,7 +215,7 @@
 "content": "Красная площадь"
 },
 {
-"success" : true,
+"success" : false,
 "task_id" : 23,
 "duration" : 30,
 "finish_time" : 1538737660,
