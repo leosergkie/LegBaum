@@ -382,6 +382,10 @@ footer {
 	float: left;
 }
 
+.nameTeamInStages{
+	color: #ffffff;
+}
+
 .listAllCircleInTeam{
 	grid-row: 4;
 	grid-column: 2;
@@ -392,7 +396,7 @@ footer {
 .blockWithCircle{
 	float:left;
 	width: 125px;
-	height: 125px;
+	height: 150px;
 
 	/*background-color: grey;*/
 
@@ -466,7 +470,7 @@ footer {
 	grid-row: 4;
 	grid-column: 4;
 
-	height: 110px;
+	height: 90px;
 
 	background: #26292b;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);

@@ -1,45 +1,3 @@
-/*var now = new Date();
-
-
-var name = mass.routers[0].team_name;
-var key = 0, i = 0;
-
-function n(n){
-    return n > 9 ? "" + n: "0" + n;
-}
-
-for (key in mass.routers) {
-	var date_start = new Date(mass.routers[key].start_time);
-	
-	now = new Date(now.getTime());
-
-	var hrs = (now.getHours()-date_start.getHours());
-	var mnts = (now.getMinutes()-date_start.getMinutes());
-
-	if(hrs < 0){
-		hrs = (now.getHours()-date_start.getHours() +24);
-	}
-	if(mnts < 0){
-		mnts = (now.getMinutes()-date_start.getMinutes() + 60);
-	}
-
-	$("<div class=\"block2\" id=\"block2" + key + "\">   					<div>КОМАНДА " + mass.routers[key].team_id + "  " + name + ", участников: " + mass.routers[key].players_count + "</div> 				                                            	 		<div class=\"inf_block\">									Время старта: " + n(date_start.getHours()) + ":" + n(date_start.getMinutes()) + "<br>       						Времени прошло: " + n(hrs) + ":" + n(mnts) + "<br>							Этапов пройдено: 2/15<br>							Этапов провалено: " + mass.routers[key].fail_count + "<br>								Опережение графика:						</div>												").appendTo("#block");
-//alert(mass.routers[key].tasks_list.length);
-	for (i in mass.routers[key].tasks_list_ids)
-	{
-		var date_start0 = new Date(mass.routers[key].tasks_list[i].start_time);
-		var hrs = (now.getHours()-date_start0.getHours());
-		var mnts = (now.getMinutes()-date_start0.getMinutes());
-
-		if(mass.routers[key].tasks_list[i]){
-			$("<div class=\"circle\">		 <div class=\"d1 " + ((mass.routers[key].tasks_list[i].success != null) ? (mass.routers[key].tasks_list[i].success ? "successfull" : "wasted") :("current")) + "\"></div>								<p>ЭТАП " + mass.routers[key].tasks_list_ids[i] + "</p>											<p>" + UNIXTimeToNormalTime(mass.routers[key].tasks_list[i].start_time) + "/10:00</p>									<div class=\"triangle\" id = \"triangle\">			</div>											</div>											</div>").appendTo("#block2" + key);
-			}else{
-				$("<div class=\"circle\">		 <div class=\"d1 unactive\"></div>												<p>ЭТАП " + mass.routers[key].tasks_list_ids[i] + "</p>											<p>00:00/10:00</p>						<div class=\"triangle\" id = \"triangle\">			</div>											</div>											</div>").appendTo("#block2" + key);
-			}
-		}
-
-		$('#triangle'+key+'-'+i).addClass('hiddeo_kodjima');
-}*/
 var allTeams = [];
 
 var isCheckbox2 = $('.tableCheckbox.checkbox2').is(':checked');
@@ -132,10 +90,10 @@ function outputDATA(){
 
 function createHead(team){
     var head = '<div class="headTeamInList">' +
-        '<p>КОМАНДА' +
+        '<p><span class = "nameTeamInStages">КОМАНДА ' +
             team.team_id
             +
-            '&nbsp&nbsp&nbsp"'
+            '</span>&nbsp&nbsp&nbsp"'
             +
             team.team_name
             +
@@ -165,7 +123,7 @@ function createBlock(team, i){
     if(j >= 0){
         block = block + '<div class="oneCircleInBlock ' + coloredCircle(team.tasks_list[j]) + '"></div>'
         +
-        '<p class="firstTextInBlock">ЭТАП ' + team.tasks_list_ids[i] + '</p>'
+        '<p class="firstTextInBlock">' + team.tasks_list[j].content + '</p>'
         +
         coloredBlockTime(team, j);
     }else{
@@ -206,10 +164,7 @@ function createPropTeam(team){
     +
     team.fail_count
     +
-    '</p><p> Опережение графика: '
-    +
-    '--:--'
-    +'</p></div>';
+    '</p></div>';
     return prop;
 }
 
@@ -238,7 +193,7 @@ function coloredBlockTime(team, i){
         if(team.tasks_list[i].success == true){
             cTime = '<p class="secondTextInBlock"><span class="doneColorText">'
             +
-            UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].finish_time)
+            UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].finish_time - team.tasks_list[i].start_time)
             +
             '</span>/' + UNIXTimeToNormalTimeMinuteSec(team.tasks_list[i].duration) +'</p>';
         }else{
