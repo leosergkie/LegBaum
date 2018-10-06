@@ -12,12 +12,19 @@
 	<meta name="viewport" content="width=device-width">
 </head>
 <body>
+
 	<div class="popup">
 		<div class="popup-block">
-			<p>Текст текст текст текст текст лорем ипсум</p>
-			<button class="button">Кнопка</button>
+			<form action='skip_extra' method="get">
+				<p style="padding-bottom: 10px">Вы уверены, что хотите пропустить этот этап? Вернуться к нему позже будет нельзя!</p>
+				<div>
+					<input type="submit" class="button" value="Да">
+					<input type="button" class="button" id="close" value="Отменить">
+				</div>
+			</form>
 		</div>
 	</div>
+
 	<div class="header">
 		<div class="header-grid">
 			<div class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
