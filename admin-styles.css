@@ -437,9 +437,10 @@ label[for="memberFirstName"] {
 
 .table_teams_stroke{
 	display:grid;
-	grid-template-rows: 55px;
+	grid-template-rows: auto;
 	grid-template-columns: 5fr 13fr 23fr 10fr 10fr 12fr 10fr 10fr 100px;
 	min-width: 842px;
+	min-height: 55px;
 
     -ms-user-select: none;
     -moz-user-select: none;
@@ -460,8 +461,9 @@ label[for="memberFirstName"] {
     align-items: center;
     justify-content: center;
     line-height: 24px;
-
+	padding-top: 10px;
     border-right: 2px solid #545859;
+    word-break:break-all;
 }
 
 .table_teams_body .table_teams_stroke p:last-child{
