@@ -217,13 +217,13 @@ function UNIXTimeToNormalTime(a){
     if(a == null){
         time = '-';
     }else{
-	   time = Math.round(new Date(a*1000).getHours()) + ':';
+	   time = Math.round(new Date(a*1000 - 3*3600000).getHours()) + ':';
 
-	   if(Math.round(new Date(a*1000).getMinutes()) < 10){
+	   if(Math.round(new Date(a*1000 - 3*3600000).getMinutes()) < 10){
 		  time = time + '0';
 	   }
 
-	   time = time + Math.round(new Date(a*1000).getMinutes());
+	   time = time + Math.round(new Date(a*1000 - 3*3600000).getMinutes());
     }
 
 	return time;
