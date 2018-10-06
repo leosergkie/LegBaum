@@ -456,6 +456,16 @@ label[for="memberFirstName"] {
 	background-color: #808486;
 }
 
+.table_teams_head .table_teams_stroke p{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 24px;
+	padding-top: 10px;
+    border-right: 2px solid #545859;
+    word-break: normal;
+}
+
 .table_teams_stroke p{
 	display: flex;
     align-items: center;
