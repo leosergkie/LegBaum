@@ -517,5 +517,6 @@ thead >tr>td {
 }
 .block>p>img{
 	text-align: center;
+	text-indent: none;
 	width: 250px;
 }
